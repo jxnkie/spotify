@@ -1,1 +1,36 @@
-<h1>test</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify authorization</title>
+    <link rel="stylesheet" href="./s.css" />
+    <script>
+      window.onload = () => {
+        const input = document.getElementById("spotifycode");
+        const button = document.getElementById("copybtn");
+        input.setAttribute("value", "/spotify " + window.location);
+        button.onclick = () => {
+            input.select();
+            document.execCommand("copy");
+        }
+      };
+    </script>
+  </head>
+  <body
+    class="h-screen w-screen overflow-hidden bg-black flex justify-center items-center"
+  >
+    <div class="bg-white p-6 rounded-xl flex flex-col gap-4">
+      <h1 class="font-bold text-lg">Copy and paste this to bot:</h1>
+      <input
+        class="p-2 rounded-xl bg-violet-800 text-white w-full"
+        disabled
+        value=""
+        id="spotifycode"
+      />
+      <button class="p-3 bg-black text-white rounded-xl" id="copybtn">
+        Copy
+      </button>
+    </div>
+  </body>
+</html>
