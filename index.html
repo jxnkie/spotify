@@ -8,13 +8,14 @@
     <script>
       window.onload = () => {
         const input = document.getElementById("spotifycode");
-        const button = document.getElementById("copybtn");
         input.setAttribute("value", "/spotify " + window.location);
-        button.onclick = () => {
-            input.select();
-            document.execCommand("copy");
-        }
-      };
+      }
+      function copyy() {
+        var copyText = document.getElementById("spotifycode");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(copyText.value);
+      }
     </script>
   </head>
   <body
@@ -28,7 +29,7 @@
         value=""
         id="spotifycode"
       />
-      <button class="p-3 bg-black text-white rounded-xl" id="copybtn">
+      <button class="p-3 bg-black text-white rounded-xl" id="copybtn" onclick="copyy()">
         Copy
       </button>
     </div>
